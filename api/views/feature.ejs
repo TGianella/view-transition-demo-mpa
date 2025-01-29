@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feature</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+  </head>
+  <body>
+    <div id="root">
+      <div class="address">
+        <div>
+          <span class="material-icons">arrow_back</span>
+          <span class="material-icons">arrow_forward</span>
+          <span class="material-icons">refresh</span>
+          <div class="address-bar">
+            <%= "https://blablabla.io/feature/" + color  %>
+          </div>
+          <span class="material-icons">account_circle</span>
+          <span class="material-icons">more_vert</span>
+        </div>
+      </div>
+      <header>
+        <h1><a href="/">BlaBlaBla - Multipage Edition <span>🔥</span></a></h1>
+      </header>
+      <div class="feature-wrapper">
+        <div
+                class="card feature"
+                style="background: #<%= color %>; view-transition-name: card-<%= color %>;"
+        ></div>
+        <% colors
+                .filter((cardColor) => cardColor !== color)
+                .slice(0, 4)
+        .forEach((cardColor, i) => {
+          const index = i < colors.indexOf(color) ? i : i + 1;
+        %>
+        <a
+                href="/feature/<%= cardColor %>"
+                class="card"
+                style="background: #<%= cardColor %>; view-transition-name: card-<%= cardColor %>;"
+        ></a>
+        <% }); %>
+
+      </div>
+    </div>
+  </body>
+</html>
