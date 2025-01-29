@@ -7,4 +7,6 @@ module.exports = [
     "A192E5",
     "E5B692",
     "92E592",
+    "E592AB",
+    "E5DD92",
 ];
